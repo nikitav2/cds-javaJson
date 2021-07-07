@@ -20,8 +20,10 @@ public class App
         //target\\surefire-reports\\*.txt
         ArrayList<TestSet> tSets = ReadFile(file);
         WriteFile(tSets);
+        //hello
          
     }
+
 
     private static ArrayList<TestSet> ReadFile(File file) {
       String test_set_name = "";
