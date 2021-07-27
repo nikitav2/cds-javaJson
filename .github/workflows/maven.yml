@@ -28,7 +28,9 @@ jobs:
           echo "${{ env.Repo_Name}}"
     - name: Display Date
       run: |
-           echo "OUTPUT=output-$(date "+%Y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
+          echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+    - name: Echo current date
+      run: echo $NOW
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: 'Publish JAR'
@@ -36,3 +38,5 @@ jobs:
       with:
           name: ‘cicd-demo-${{env.VERSION}}-all.jar'
           path: demo.jar
+ 
+          
