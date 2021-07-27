@@ -26,6 +26,9 @@ jobs:
     - name: Repo Name
       run: |
           echo "${{ env.Repo_Name}}"
+    - name: Display Date
+      run: |
+           echo "OUTPUT=output-$(date "+%Y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: 'Publish JAR'
