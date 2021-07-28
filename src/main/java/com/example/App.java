@@ -60,16 +60,16 @@ public class App
                     time_elapsed = data_stats[1].trim();
                   } 
                 }
-                System.out.print(System.getenv("Repo_Name"));
+                System.out.println(System.getenv("Repo_Name"));
+                System.out.println(System.getenv("Repo_Date"));
                 //change enviornment variable to what it is going to be in Github Actions
                 String repoName = System.getenv("Repo_Name");
-                TestSet ts1 = new TestSet(repoName, test_set_name, tests_run, failures, errors, skipped, time_elapsed);
+                String dateRun =  System.getenv("Repo_Date");
+                TestSet ts1 = new TestSet(repoName, test_set_name, dateRun, tests_run, failures, errors, skipped, time_elapsed);
                 tsets.add(ts1);
               }
-              
             }
             scanner.close();
-            
           } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -82,7 +82,7 @@ public class App
         //using Jackson
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-          objectMapper.writeValue(new File("c:\\_Nikita\\tsting.json"), tSets);
+          objectMapper.writeValue(new File("c:\\_Nikita\\cds-GithubActionIntegration.json"), tSets);
         } catch (JsonGenerationException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();

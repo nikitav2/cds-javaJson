@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 public class TestSet {
     public String repoName;
     public String testName;
+    public String dateRun;
     public String numTestsRun;
     public String failures;
     public String errors;
@@ -17,9 +18,10 @@ public class TestSet {
 
     public TestSet() {}
 
-    public TestSet(String repoName, String name, String numTestsRun, String failures, String errors, String skipped, String timeElapsed) {
+    public TestSet(String repoName, String name, String dateRun, String numTestsRun, String failures, String errors, String skipped, String timeElapsed) {
         this.repoName = repoName;
         this.testName = name;
+        this.dateRun = dateRun;
         this.numTestsRun = numTestsRun;
         this.failures = failures;
         this.errors = errors;
