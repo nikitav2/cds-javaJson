@@ -30,9 +30,9 @@ jobs:
       id: date
       run: |
           echo "::set-output name=date::$(date +'%Y-%m-%d')"
+    - name: Date
       env: 
         GithubDate: ${{ steps.date.outputs.date }}
-    - name: Date
       run: |
           echo "${{ env.GithubDate}}"
     - name: Build with Maven
