@@ -36,7 +36,10 @@ jobs:
       run: |
           echo "${{ env.GithubDate}}"
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+          mvn -B package --file pom.xml
+          ls /home/runner/work/cds-javaJson/cds-javaJson/target/
+      
     - name: 'Publish JAR'
       uses: actions/upload-artifact@v2-preview
       with:
