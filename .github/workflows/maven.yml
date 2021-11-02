@@ -39,6 +39,7 @@ jobs:
       run: |
           mvn -B package --file pom.xml
           ls /home/runner/work/cds-javaJson/cds-javaJson/target/
+          ls -la  ls /home/runner/work/cds-javaJson/cds-javaJson/target/surefire-reports
       
     - name: 'Publish JAR'
       uses: actions/upload-artifact@v2-preview
