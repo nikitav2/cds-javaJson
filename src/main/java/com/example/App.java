@@ -82,7 +82,7 @@ public class App
         //using Jackson
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-          objectMapper.writeValue(new File("c:\\_Nikita\\tsting.json"), tSets);
+          objectMapper.writeValue(new File("/home/runner/work/cds-javaJson/cds-javaJson/cds-GithubActionIntegration.json"), tSets);
         } catch (JsonGenerationException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();
