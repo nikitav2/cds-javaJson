@@ -17,7 +17,7 @@ import java.io.IOException;
 public class App 
 {
     public static void main( String[] args ) {
-        File file = new File("target\\surefire-reports\\*.txt");
+        File file = new File("/home/runner/work/cds-javaJson/cds-javaJson/target/surefire-reports/com.example.AppTest.txt");
         //C:\\Users\\VOLYNNX\\cds-GithubActionToPowerBiTest\\target\\surefire-reports\\TicTacTest.txt
         //target\\surefire-reports\\*.txt
         ArrayList<TestSet> tSets = ReadFile(file);
