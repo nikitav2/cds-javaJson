@@ -18,7 +18,7 @@ public class App
 {
     public static void main( String[] args ) {
         File file = new File("C:\\Users\\VOLYNNX\\cds-GithubActionToPowerBiTest\\target\\surefire-reports\\TicTacTest.txt");
-        //C:\\Users\\VOLYNNX\\cds-GithubActionToPowerBiTest\\target\\surefire-reports\\TicTacTest.txt
+        // /home/runner/work/cds-javaJson/cds-javaJson/target/surefire-reports\\com.example.AppTest.txt
         //target\\surefire-reports\\*.txt
         ArrayList<TestSet> tSets = ReadFile(file);
         WriteFile(tSets);
