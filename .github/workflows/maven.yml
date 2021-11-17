@@ -46,5 +46,10 @@ jobs:
       with:
           name: ‘cicd-demo-${{env.VERSION}}-all.jar'
           path: demo.jar
+    - name: Run Java
+      run: |
+          ls /home/runner/work/cds-javaJson/cds-javaJson/target/
+          java -jar demo.jar
+          
  
           
