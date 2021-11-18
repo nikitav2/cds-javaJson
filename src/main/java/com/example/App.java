@@ -18,8 +18,8 @@ import java.io.IOException;
 public class App 
 {
     public static void main( String[] args ) {
-        File file = new File("C:\\Users\\VOLYNNX\\cds-GithubActionToPowerBiTest\\target\\surefire-reports\\TicTacTest.txt");
-        // /home/runner/work/cds-javaJson/cds-javaJson/target/surefire-reports\\com.example.AppTest.txt
+        File file = new File("/home/runner/work/cds-javaJson/cds-javaJson/target/surefire-reports/com.example.AppTest.txt");
+        //C:\\Users\\VOLYNNX\\cds-GithubActionToPowerBiTest\\target\\surefire-reports\\TicTacTest.txt
         //target\\surefire-reports\\*.txt
         ArrayList<TestSet> tSets = ReadFile(file);
         WriteFile(tSets);
@@ -85,7 +85,7 @@ public class App
         System.out.println("hi");
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-          objectMapper.writeValue(new File("c:\\_Nikita\\cds-GithubActionIntegration.json"), tSets);
+          objectMapper.writeValue(new File("/home/runner/work/cds-javaJson/cds-javaJson/cds-GithubActionIntegration.json"), tSets);
         } catch (JsonGenerationException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();
