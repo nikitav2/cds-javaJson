@@ -4,14 +4,15 @@ package com.example;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner; // Import the Scanner class to read text files
+//import com.fasterxml.jackson.*;
 import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.core.JsonParseException;
+//imort com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-//hello
+//hellop
 
 
 public class App 
@@ -60,8 +61,8 @@ public class App
                     time_elapsed = data_stats[1].trim();
                   } 
                 }
-                System.out.println(System.getenv("Repo_Name"));
-                System.out.println(System.getenv("Repo_Date"));
+                // System.out.println(System.getenv("Repo_Name"));
+                // System.out.println(System.getenv("Repo_Date"));
                 //change enviornment variable to what it is going to be in Github Actions
                 String repoName = System.getenv("Repo_Name");
                 String dateRun =  System.getenv("Repo_Date");
@@ -77,9 +78,11 @@ public class App
           //TestSet test_Cases = new TestSet(test_set_name, tests_run, failures, errors, skipped, time_elapsed);
           return tsets;
     }
+    
 
     private static void WriteFile(ArrayList<TestSet> tSets)  {
         //using Jackson
+        System.out.println("hi");
         ObjectMapper objectMapper = new ObjectMapper();
         try {
           objectMapper.writeValue(new File("c:\\_Nikita\\cds-GithubActionIntegration.json"), tSets);
