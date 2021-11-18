@@ -50,6 +50,11 @@ jobs:
       run: |
           ls /home/runner/work/cds-javaJson/cds-javaJson/target/
           java -jar demo.jar
+    - name: 'Publish JSON'
+      uses: actions/upload-artifact@v2-preview
+      with:
+          name: 'test-results.json'
+          path: /home/runner/work/cds-javaJson/cds-javaJson/cds-GithubActionIntegration.json
           
  
           
