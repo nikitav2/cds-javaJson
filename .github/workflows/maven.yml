@@ -35,6 +35,9 @@ jobs:
         GithubDate: ${{ steps.date.outputs.date }}
       run: |
           echo "${{ env.GithubDate}}"
+    - name: Get Github Token
+      run : |
+           echo "${{ env.GITHUB_TOKEN}}"
     - name: Build with Maven
       run: |
           mvn -B package --file pom.xml
