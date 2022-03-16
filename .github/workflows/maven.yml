@@ -60,7 +60,7 @@ jobs:
           path: /home/runner/work/cds-javaJson/cds-javaJson/cds-GithubActionIntegration.json
     - name: 'Run Script'
       run: |
-         python json-script.py
+         python json-script.py --auth ${{ secrets.GITHUB_TOKEN }} --repo_name ${{ env.Repo_Name}}
           
  
           
