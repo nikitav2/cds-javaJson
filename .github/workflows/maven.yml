@@ -58,6 +58,9 @@ jobs:
       with:
           name: 'test-results.json'
           path: /home/runner/work/cds-javaJson/cds-javaJson/cds-GithubActionIntegration.json
+    - name: 'Run Script'
+      run: |
+         py /json-script.py
           
  
           
