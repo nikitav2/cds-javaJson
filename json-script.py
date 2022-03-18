@@ -45,16 +45,20 @@ def main():
 
     # Step 1
     # setup owner name , access_token, and headers
-    owner = 'nikitav2'
-    access_token = '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'
-    headers = {'Authorization': "Token " + access_token}
+    owner = "nikitav2"
+    access_token = "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"
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', "Authorization": "TOKEN " + access_token}
 
 
     for page_number in range(1):
         try:
             # to find all the repo_name_list' names from each page
             url = f"https://api.github.com/users/{owner}/repos?page={page_number}"
-            repo = requests.get(url, headers=headers).json()
+            print(headers)
+            print(url)
+            repo = requests.get(url, headers=headers)
+            repo = repo.json()
+
             for i in range(len(repo)):
                 repo_name = repo[i]['name']
                 if repo_name not in repo_name_list:
@@ -92,13 +96,13 @@ def main():
 
     my_parser = argparse.ArgumentParser('Getting the Github token')
     my_parser.add_argument('auth',
-                           metavar='path',
+                           metavar='<str>',
                            type=str,
-                           help='the path to list')
+                           help='auth token')
     my_parser.add_argument('repo_name',
-                           type = str,
-                           action='store_true',
-                           help='enable the long listing format')
+                           metavar='<str>',
+                           type=str,
+                           help='repo_name')
 
     # Execute parse_args()
     args = my_parser.parse_args()
