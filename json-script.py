@@ -4,6 +4,22 @@ import argparse
 
 ####---------- MAIN ----------####
 
+my_parser = argparse.ArgumentParser('Getting the Github token')
+my_parser.add_argument('auth',
+                           metavar='<str>',
+                           type=str,
+                           help='auth token')
+my_parser.add_argument('repoName',
+                           metavar='<str>',
+                           type=str,
+                           help='repo_name')
+
+# Eexecute parse_args()
+args = my_parser.parse_args()
+
+
+
+
 def main():
 
     ####---------- REQUESTS ----------####
@@ -94,21 +110,21 @@ def main():
     with open('cds-GithubActionIntegration.json', 'w', encoding='utf-8') as f:
         json.dump(json_data, f, ensure_ascii=False, indent=4)
 
-    my_parser = argparse.ArgumentParser('Getting the Github token')
-    my_parser.add_argument('auth',
-                           metavar='<str>',
-                           type=str,
-                           help='auth token')
-    my_parser.add_argument('repo_name',
-                           metavar='<str>',
-                           type=str,
-                           help='repo_name')
-
-    # Execute parse_args()
-    args = my_parser.parse_args()
-
+    # my_parser = argparse.ArgumentParser('Getting the Github token')
+    # my_parser.add_argument('auth',
+    #                        metavar='<str>',
+    #                        type=str,
+    #                        help='auth token')
+    # my_parser.add_argument('repoName',
+    #                        metavar='<str>',
+    #                        type=str,
+    #                        help='repo_name')
+    #
+    # # Execute parse_args()
+    # args = my_parser.parse_args()
+    #
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', 'Authorization': "TOKEN " + args.auth}
-    url = f"{args.reponame}/{repo_name}/actions/artifacts"  # add /zip for download
+    url = f"{args.repoName}/{repo_name}/actions/artifacts"  # add /zip for download
     #do i need two requests? One to get the github token and one to get the actual repository.
     input_path = args.Path
 
