@@ -5,14 +5,14 @@ import argparse
 ####---------- MAIN ----------####
 
 my_parser = argparse.ArgumentParser('Getting the Github token')
-my_parser.add_argument('auth',
+my_parser.add_argument('-auth',
                            metavar='<str>',
                            type=str,
                            help='auth token')
-my_parser.add_argument('repoName',
+my_parser.add_argument('-repoName',
                            metavar='<str>',
                            type=str,
-                           help='repo_name')
+                           help='repoName')
 
 # Eexecute parse_args()
 args = my_parser.parse_args()
