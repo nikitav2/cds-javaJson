@@ -126,7 +126,7 @@ def main():
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', 'Authorization': "TOKEN " + args.auth}
     url = f"{args.repoName}/{repo_name}/actions/artifacts"  # add /zip for download
    
-    cat cds-GithubActionIntegration.json
+    
 
 
     #do i need two requests? One to get the github token and one to get the actual repository.
