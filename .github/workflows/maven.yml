@@ -61,6 +61,7 @@ jobs:
     - name: 'Run Script'
       run: |
          python json-script.py -auth ${{ secrets.GITHUB_TOKEN }} -repoName ${{ env.Repo_Name}}
+         cat cds-GithubActionIntegration.json
           
  
           
