@@ -89,7 +89,7 @@ def main():
     #Step 2
     for repo_name in repo_name_list:
         # Set Request Parameters
-        auth = "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"
+        auth = "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"
         headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', 'Authorization': "TOKEN " + auth}
         url = f"https://api.github.com/repos/nikitav2/{repo_name}/actions/artifacts" #add /zip for download
 
