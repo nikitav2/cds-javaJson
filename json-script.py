@@ -62,7 +62,7 @@ def main():
     # Step 1
     # setup owner name , access_token, and headers
     owner = "nikitav2"
-    access_token = "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"
+    access_token = "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"
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', "Authorization": "TOKEN " + access_token}
 
 
